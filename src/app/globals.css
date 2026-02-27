@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-teal-primary: #2A6B6B;
+  --color-teal-dark: #0D2626;
+  --color-teal-muted: #8A9E9E;
+  --color-teal-light: #3D8A8A;
+
+  --color-cream-DEFAULT: #F5F0E8;
+  --color-cream-soft: #FAFAF8;
+
+  --font-playfair: var(--font-playfair), serif;
+  --font-dm: var(--font-dm-sans), sans-serif;
+
+  --radius-card: 12px;
+  --radius-pill: 999px;
+
+  --animate-fade-up: fadeUp 0.6s ease forwards;
+  --animate-fade-in: fadeIn 0.4s ease forwards;
+  --animate-pulse-soft: pulseSoft 2s ease-in-out infinite;
+
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulseSoft {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.6;
+    }
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0D2626;
+    color: #F5F0E8;
+    font-family: var(--font-dm-sans), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #2A6B6B;
+    color: #F5F0E8;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0D2626;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2A6B6B;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(42, 107, 107, 0.08);
+    border: 1px solid rgba(245, 240, 232, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+  }
+
+  .teal-button {
+    @apply bg-teal-primary hover:bg-teal-light text-cream-DEFAULT font-dm font-medium px-8 py-4 rounded-pill transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-teal-primary/20 active:scale-[0.98];
+  }
+
+  .outline-button {
+    @apply border border-cream-DEFAULT/20 hover:border-cream-DEFAULT/60 text-cream-DEFAULT font-dm font-medium px-8 py-4 rounded-pill transition-all duration-300 hover:bg-cream-DEFAULT/5;
+  }
+
+  .section-title {
+    @apply font-playfair text-4xl md:text-5xl text-cream-DEFAULT leading-tight;
+  }
+
+  .section-subtitle {
+    @apply font-dm text-teal-muted text-sm tracking-[0.2em] uppercase;
+  }
+}
