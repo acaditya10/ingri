@@ -23,7 +23,9 @@ interface Props {
 }
 
 // Replace this with your actual live domain once deployed!
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://your-live-domain.com";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` :
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://www.ingri.page"));
 
 export function AdminNotificationEmail({
   name,

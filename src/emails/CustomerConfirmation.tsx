@@ -25,11 +25,13 @@ interface Props {
 
 const formatTime = (t: string) => {
   const [h, m] = t.split(":").map(Number);
-  const hour = h % 12 || 12; 
+  const hour = h % 12 || 12;
   return `${hour}:${m.toString().padStart(2, "0")} ${h >= 12 ? "PM" : "AM"}`;
 };
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://your-live-domain.com";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` :
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://www.ingri.page"));
 
 export function CustomerConfirmationEmail({
   name,
@@ -59,7 +61,7 @@ export function CustomerConfirmationEmail({
       <Preview>Your table at ingri is confirmed for {formattedDate}</Preview>
       <Body style={{ backgroundColor: "#0D2626", fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}>
         <Container style={{ maxWidth: "480px", margin: "0 auto", padding: "40px 20px" }}>
-          
+
           <Section style={{ textAlign: "center", paddingBottom: "32px", borderBottom: "1px solid rgba(245,240,232,0.1)" }}>
             <Img
               src={`${baseUrl}/images/logo.png`}
@@ -101,7 +103,7 @@ export function CustomerConfirmationEmail({
             <Text style={{ color: "rgba(245,240,232,0.7)", fontSize: "13px", margin: "0 0 24px" }}>
               Sector 28, DLF Phase IV, Gurugram
             </Text>
-            
+
             <Button
               href="https://www.google.com/maps/dir/?api=1&destination=Museo+Camera+Centre,+Sector+28,+Gurugram"
               style={{
@@ -121,7 +123,7 @@ export function CustomerConfirmationEmail({
           </Section>
 
           <Text style={{ color: "rgba(245,240,232,0.5)", fontSize: "13px", lineHeight: "1.6", textAlign: "center" }}>
-            Need to cancel or modify? Simply reply to this email or call us at +91 93114 15282. 
+            Need to cancel or modify? Simply reply to this email or call us at +91 93114 15282.
             We request at least 24 hours notice.
           </Text>
 
