@@ -88,7 +88,7 @@ export default function HomePage() {
 
             <a
               href="tel:+919311415282"
-              className="flex items-center gap-2.5 group transition-all duration-300 w-fit"
+              className="flex items-center gap-2.5 group transition-all duration-300 w-fit mx-auto md:mx-0"
             >
               <div className="p-1.5 rounded-full border border-teal-muted/30 group-hover:border-cream-DEFAULT/50 group-hover:shadow-[0_0_10px_rgba(242,235,221,0.3)] transition-all duration-300">
                 <Phone className="w-3.5 h-3.5 text-teal-muted group-hover:text-cream-DEFAULT transition-colors duration-300" />
@@ -102,7 +102,7 @@ export default function HomePage() {
               href="https://instagram.com/ingriatmuseo"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2.5 group transition-all duration-300 w-fit"
+              className="flex items-center gap-2.5 group transition-all duration-300 w-fit mx-auto md:mx-0"
             >
               <div className="p-1.5 rounded-full border border-teal-muted/30 group-hover:border-cream-DEFAULT/50 group-hover:shadow-[0_0_10px_rgba(242,235,221,0.3)] transition-all duration-300">
                 <Instagram className="w-3.5 h-3.5 text-teal-muted group-hover:text-cream-DEFAULT transition-colors duration-300" />
@@ -114,7 +114,7 @@ export default function HomePage() {
 
             <a
               href="mailto:contact@ingri.com"
-              className="flex items-center gap-2.5 group transition-all duration-300 w-fit"
+              className="flex items-center gap-2.5 group transition-all duration-300 w-fit mx-auto md:mx-0"
             >
               <div className="p-1.5 rounded-full border border-teal-muted/30 group-hover:border-cream-DEFAULT/50 group-hover:shadow-[0_0_10px_rgba(242,235,221,0.3)] transition-all duration-300">
                 <Mail className="w-3.5 h-3.5 text-teal-muted group-hover:text-cream-DEFAULT transition-colors duration-300" />
