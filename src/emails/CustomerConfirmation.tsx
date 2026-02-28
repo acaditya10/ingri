@@ -105,7 +105,7 @@ export function CustomerConfirmationEmail({
             </Text>
 
             <Button
-              href="https://www.google.com/maps/dir/?api=1&destination=Museo+Camera+Centre,+Sector+28,+Gurugram"
+              href="https://maps.app.goo.gl/FttMHpfJENMrmTsh6"
               style={{
                 backgroundColor: "#2A6B6B", // Your teal primary
                 color: "#F5F0E8",

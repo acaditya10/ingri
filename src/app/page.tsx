@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import OurStory from "@/components/OurStory";
 import DishMarquee from "@/components/DishMarquee";
+import { Phone, Instagram, Mail } from "lucide-react";
 
 export default function HomePage() {
   // Read the images directly from the folder on the server
@@ -45,7 +46,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="border-t border-cream-DEFAULT/5 py-16 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left font-dm text-teal-muted text-sm">
-          
+
           {/* Location */}
           <div className="space-y-2">
             <h4 className="text-cream-DEFAULT tracking-widest uppercase text-xs mb-4 font-medium">
@@ -56,9 +57,9 @@ export default function HomePage() {
             <p>Gurugram, Haryana 122009</p>
             {/* Google Maps Link */}
             <div className="pt-2">
-              <a 
-                href="https://www.google.com/maps/dir/?api=1&destination=Museo+Camera+Centre,+Sector+28,+Gurugram" 
-                target="_blank" 
+              <a
+                href="https://maps.app.goo.gl/FttMHpfJENMrmTsh6"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-xs text-teal-muted hover:text-cream-DEFAULT border-b border-teal-muted/30 hover:border-cream-DEFAULT pb-0.5 transition-all duration-300"
               >
@@ -80,26 +81,48 @@ export default function HomePage() {
           </div>
 
           {/* Contact */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             <h4 className="text-cream-DEFAULT tracking-widest uppercase text-xs mb-4 font-medium">
               Contact
             </h4>
-            <p>
-              <a 
-                href="mailto:contact@ingri.com" 
-                className="hover:text-cream-DEFAULT transition-colors duration-300"
-              >
-                contact@ingri.com
-              </a>
-            </p>
-            <p>
-              <a 
-                href="tel:+919311415282" 
-                className="hover:text-cream-DEFAULT transition-colors duration-300"
-              >
+
+            <a
+              href="tel:+919311415282"
+              className="flex items-center gap-2.5 group transition-all duration-300 w-fit"
+            >
+              <div className="p-1.5 rounded-full border border-teal-muted/30 group-hover:border-cream-DEFAULT/50 group-hover:shadow-[0_0_10px_rgba(242,235,221,0.3)] transition-all duration-300">
+                <Phone className="w-3.5 h-3.5 text-teal-muted group-hover:text-cream-DEFAULT transition-colors duration-300" />
+              </div>
+              <span className="text-teal-muted group-hover:text-cream-DEFAULT transition-colors duration-300">
                 +91 93114 15282
-              </a>
-            </p> 
+              </span>
+            </a>
+
+            <a
+              href="https://instagram.com/ingriatmuseo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 group transition-all duration-300 w-fit"
+            >
+              <div className="p-1.5 rounded-full border border-teal-muted/30 group-hover:border-cream-DEFAULT/50 group-hover:shadow-[0_0_10px_rgba(242,235,221,0.3)] transition-all duration-300">
+                <Instagram className="w-3.5 h-3.5 text-teal-muted group-hover:text-cream-DEFAULT transition-colors duration-300" />
+              </div>
+              <span className="text-teal-muted group-hover:text-cream-DEFAULT transition-colors duration-300">
+                @ingriatmuseo
+              </span>
+            </a>
+
+            <a
+              href="mailto:contact@ingri.com"
+              className="flex items-center gap-2.5 group transition-all duration-300 w-fit"
+            >
+              <div className="p-1.5 rounded-full border border-teal-muted/30 group-hover:border-cream-DEFAULT/50 group-hover:shadow-[0_0_10px_rgba(242,235,221,0.3)] transition-all duration-300">
+                <Mail className="w-3.5 h-3.5 text-teal-muted group-hover:text-cream-DEFAULT transition-colors duration-300" />
+              </div>
+              <span className="text-teal-muted group-hover:text-cream-DEFAULT transition-colors duration-300">
+                contact@ingri.com
+              </span>
+            </a>
           </div>
 
         </div>
