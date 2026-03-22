@@ -44,7 +44,7 @@ export default function DishMarquee({ images }: { images: string[] }) {
         {/* The Sliding Track */}
         <motion.div
           className="flex gap-6 md:gap-8 w-max"
-          animate={{ x: ["0%", "-50%"] }}
+          animate={{ x: ["-50%", "0%"] }}
           transition={{
             duration: 40, 
             ease: "linear",

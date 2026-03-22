@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import MenuOverlay from "./MenuOverlay";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -47,17 +49,19 @@ export default function Navbar() {
           >
             Our Story
           </a>
-          <a
-            href="#menu"
-            className="font-dm text-sm text-cream-DEFAULT/60 hover:text-cream-DEFAULT transition-colors tracking-wide"
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            className="font-dm text-sm text-cream-DEFAULT/60 hover:text-cream-DEFAULT transition-colors tracking-wide bg-transparent border-none cursor-pointer"
           >
             Menu
-          </a>
+          </button>
           <Link href="/reserve" className="teal-button py-2.5 px-6 text-sm">
             Reserve
           </Link>
         </div>
       </div>
+
+      <MenuOverlay isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </motion.nav>
   );
 }
