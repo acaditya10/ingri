@@ -25,6 +25,12 @@ export const metadata: Metadata = {
     description: "Reserve your table for an unforgettable dining experience.",
     type: "website",
   },
+  // Added this section to hide the site from search engines
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
 };
 
 export default function RootLayout({
